@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Arial' ,sans-serif;
+    background-color: aliceblue;
+    color: blue;
+}
+header{
+    display: flex;
+    top: 0;
+    left: 0;
+    width:100% ;
+    justify-content:space-between ;
+    align-items:center;
+    padding: 20px 60px;
+    background-color:beige;
+    color: blue;
+    position: fixed;
+    z-index: 1000;
+}
+.logo{
+    font-weight:bold;
+    font-size: 30px;
+}
+.nav ul{
+list-style: none;
+display: flex;
+gap: 30px;
+}
+.search-form{
+    border: 1px solid orange;
+    display: inline-flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.search-form_txt{
+    border: none;
+    width: 200px;
+    outline: none;
+    font-size: 20px;
+    padding-right: 10px;
+    background-color: transparent;
+}
+.search-form_btn{
+    border: none;
+    background-color: transparent;
+}
+.search-form_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    cursor: pointer;
+}
+.container{
+display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ grid-template-rows: 500px 10vw 15r;
+  margin-top: 50px;
+   margin-left: 200px;
+   margin-right: 50px;
+   justify-content: center;
+   gap: 20px;
+}
+
+.image{
+    margin-bottom: 10px;
+    height: 350px;
+    width: 300px;
+    margin-top: 40px;
+}
+.image img{
+height: 300px;
+width: 100%;
+object-fit: cover;
+border-radius: 7px;
+}
+.info h3{
+font-size: 21px;
+margin-bottom: 0;
+}
+.rating{
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+.rating li{
+    display: inline-block;
+    color: #ffc107;
+}
+.info-price{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.and-to-cart{
+    border: none;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+}
+.price{
+    font-weight: 700;
+    font-size: 18px;
+}
+
