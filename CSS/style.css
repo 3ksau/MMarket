@@ -5,8 +5,8 @@
 }
 body{
     font-family:'Arial' ,sans-serif;
-    background-color: aliceblue;
-    color: blue;
+    background-color: black;
+    color: white;
 }
 header{
     display: flex;
@@ -16,10 +16,77 @@ header{
     justify-content:space-between ;
     align-items:center;
     padding: 20px 60px;
-    background-color:beige;
-    color: blue;
+    background-color:#0e0e0e;
+    color: #00ffee;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
     position: fixed;
     z-index: 1000;
+}
+.burger-menu {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.burger-icon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.burger-icon span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #00ffee;
+    transition: all 0.3s ease-in-out;
+}
+
+.burger-icon span:nth-child(1) {
+    top: 10px;
+}
+
+.burger-icon span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-icon span:nth-child(3) {
+    bottom: 10px;
+}
+
+.burger-menu.active .burger-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger-menu.active .burger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+.menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: black;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
+}
+
+.burger-menu.active .menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 .logo{
     font-weight:bold;
@@ -31,7 +98,7 @@ display: flex;
 gap: 30px;
 }
 .search-form{
-    border: 1px solid orange;
+    border: 1px solid #00ffcc;
     display: inline-flex;
     padding: 0 20px;
     justify-content: space-between;
@@ -45,10 +112,21 @@ gap: 30px;
     padding-right: 10px;
     background-color: transparent;
 }
-.search-form_btn{
-    border: none;
-    background-color: transparent;
+.btn{
+  background: #00ffcc;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:0.2s ease;
 }
+/* При наведении */
+.btn:hover {
+  background: #00ffcc;
+  box-shadow: 0 0 15px rgba(0, 225, 225, 0.6);
+}
+
 .search-form_image{
     display: flex;
     align-items: center;
@@ -56,15 +134,60 @@ gap: 30px;
     background-color: transparent;
     cursor: pointer;
 }
+
 .container{
 display: grid;
  grid-template-columns: 1fr 1fr 1fr;
- grid-template-rows: 500px 10vw 15r;
+ grid-template-rows: 800px 10vw 15r;
   margin-top: 50px;
    margin-left: 200px;
    margin-right: 50px;
    justify-content: center;
    gap: 20px;
+  align-items: center;
+  height: 100vh;
+  background: black;
+  overflow: visible;
+}
+.card{
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;  
+  transition: all 0.5s ease;
+  border-radius: 12px;
+  overflow: visible;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  background: linear-gradient(
+    0deg, 
+    transparent, 
+    transparent 30%, 
+    rgba(0,255,255,0.3)
+  );
+  transform: rotate(-45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+  z-index: 10;
+}
+
+.card:hover::before {
+  opacity: 1;
+  transform: rotate(-45deg) translateY(100%);
+}
+.card h2 {
+  color: #0ff;
+  font-size: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .image{
@@ -99,18 +222,41 @@ margin-bottom: 0;
     align-items: center;
 
 }
-.and-to-cart{
-    border: none;
-    width: 40px;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    background-color: green;
-    color: white;
-    border-radius: 10px;
+.and-to-cart {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  background: #00ffcc;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+/* При наведении — лёгкое свечение */
+.and-to-cart:hover {
+  background: #00ffee;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+
+/* Визуальный отклик при фокусе (для клавиатуры) */
+.and-to-cart:focus {
+  outline: 2px solid #00ffee;
+  outline-offset: 3px;
 }
 .price{
     font-weight: 700;
     font-size: 18px;
 }
-
+.color-white{
+    color: white;
+}
