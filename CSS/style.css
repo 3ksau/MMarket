@@ -260,3 +260,142 @@ margin-bottom: 0;
 .color-white{
     color: white;
 }
+/* Адаптация планшет */
+@media (max-width: 1024px) {
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+  }
+
+  .search-form {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    grid-template-columns: 1fr 1fr;
+    margin: 100px 30px;
+    gap: 25px;
+  }
+
+  .image img {
+    height: 260px;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+}
+
+/* Адаптация телефон */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav ul {
+    display: none; /* можно скрыть меню и заменить бургером */
+  }
+
+  .burger-menu {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .search-form {
+    width: 100%;
+    padding: 5px 10px;
+  }
+
+  .search-form_txt {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    margin: 120px 15px;
+    gap: 20px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .image {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .info h3 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .info-price {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .and-to-cart {
+    position: static;
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Маленький экран (до 480px) */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 18px;
+  }
+
+  header {
+    padding: 8px 15px;
+  }
+
+  .container {
+    margin: 100px 10px;
+  }
+
+  .card {
+    padding: 8px;
+  }
+
+  .image img {
+    border-radius: 10px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
